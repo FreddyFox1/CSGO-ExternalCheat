@@ -23,17 +23,17 @@ namespace FFxCheat
 
         private void butStart_Click(object sender, EventArgs e)
         {
-            new Thread(() => wallhack.OnWallHack(bs));
+            new Thread(() => Wallhack.OnWallHack(bs));
         }
 
         private void butJump_Click(object sender, EventArgs e)
         {
-            new Thread(() => wallhack.OnWallHack(bs));
+            new Thread(() => BunnyHope.onBunnyHope(bs));
         }
 
         private void butRadar_Click(object sender, EventArgs e)
         {
-            new Thread(() => wallhack.OnWallHack(bs));
+            new Thread(() => Radar.onRadarHack(bs));
         }
     }
 }

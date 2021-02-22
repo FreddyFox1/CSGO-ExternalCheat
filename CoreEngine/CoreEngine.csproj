@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,11 +46,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="basevars.cs" />
-    <Compile Include="bunnyhope.cs" />
-    <Compile Include="structs.cs" />
-    <Compile Include="wallhack.cs" />
-    <Compile Include="netvars.cs" />
+    <Compile Include="BaseVars.cs" />
+    <Compile Include="BunnyHope.cs" />
+    <Compile Include="Radar.cs" />
+    <Compile Include="Structs.cs" />
+    <Compile Include="Wallhack.cs" />
+    <Compile Include="Netvars.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WinApi.cs" />
   </ItemGroup>

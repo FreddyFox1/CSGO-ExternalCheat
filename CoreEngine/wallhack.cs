@@ -1,19 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace CoreEngine
 {
-    public class wallhack
+    /// <summary>
+    /// Дает преимущество игроку и позволяет видеть сквозь стены своих противников 
+    /// </summary>
+    public class Wallhack
     {
         public static void OnWallHack(BaseVars baseVars)
         {
             while (true)
             {
-                structs.GlowEffects Enemy = new structs.GlowEffects()
+                Structs.GlowEffects Enemy = new Structs.GlowEffects()
                 {
                     _colorRed = 1,
                     _colorGreen = 1,
@@ -22,7 +21,7 @@ namespace CoreEngine
                     rwo = true,
                     rwuo = true
                 };
-                structs.GlowEffects Team = new structs.GlowEffects()
+                Structs.GlowEffects Team = new Structs.GlowEffects()
                 {
                     _colorRed = 0,
                     _colorGreen = 0,
@@ -38,17 +37,17 @@ namespace CoreEngine
                 {
                     address = baseVars.GameClient + signatures.dwLocalPlayer;
                     int Player = baseVars.VAM.ReadInt32((IntPtr)address);
-                    address = Player + netvars.m_iTeamNum;
+                    address = Player + Netvars.m_iTeamNum;
                     int MyTeam = baseVars.VAM.ReadInt32((IntPtr)address);
                     address = baseVars.GameClient + signatures.dwEntityList + (i - 1) * 0x10;
                     int EntityList = baseVars.VAM.ReadInt32((IntPtr)address);
-                    address = EntityList + netvars.m_iTeamNum;
+                    address = EntityList + Netvars.m_iTeamNum;
                     int HisTeam = baseVars.VAM.ReadInt32((IntPtr)address);
                     address = EntityList + signatures.m_bDormant;
 
                     if (!baseVars.VAM.ReadBoolean((IntPtr)address))
                     {
-                        address = EntityList + netvars.m_iGlowIndex;
+                        address = EntityList + Netvars.m_iGlowIndex;
                         int GlowIndex = baseVars.VAM.ReadInt32((IntPtr)address);
 
                         if (MyTeam == HisTeam)

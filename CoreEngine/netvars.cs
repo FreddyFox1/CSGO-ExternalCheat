@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace CoreEngine
 {
-    public static class netvars
+    /// <summary>
+    /// Базовые адреса для смещений в памяти.
+    /// </summary>
+    public static class Netvars
     {
         public const Int32 cs_gamerules_data = 0x0;
         public const Int32 m_ArmorValue = 0xB378;

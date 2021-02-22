@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CoreEngine
+﻿namespace CoreEngine
 {
-    public static class structs
+    public static class Structs
     {
+        /// <summary>
+        /// Структура позволяет окрашивать модели игроков свечением вокруг них
+        /// </summary>
         public struct GlowEffects
         {
             public float _colorRed;

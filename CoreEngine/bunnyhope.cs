@@ -18,21 +18,24 @@ namespace CoreEngine
             int aFlag = LocalPlayer + Netvars.m_fFlags;
             #endregion
 
-            while (WinApi.GetAsyncKeyState(32) > 0)
+            while (true)
             {
-                int _Flag = baseVars.VAM.ReadInt32((IntPtr)aFlag);
-                if (_Flag == 257)
+                while (WinApi.GetAsyncKeyState(32) > 0)
                 {
-                    baseVars.VAM.WriteInt32((IntPtr)FJump, 5);
-                    Thread.Sleep(10);
-                    baseVars.VAM.WriteInt32((IntPtr)FJump, 4);
+                    int _Flag = baseVars.VAM.ReadInt32((IntPtr)aFlag);
+                    if (_Flag == 257)
+                    {
+                        baseVars.VAM.WriteInt32((IntPtr)FJump, 5);
+                        Thread.Sleep(10);
+                        baseVars.VAM.WriteInt32((IntPtr)FJump, 4);
+                    }
                 }
+                Thread.Sleep(10);
             }
-            Thread.Sleep(10);
         }
     }
 }
-}
+
 
 
 

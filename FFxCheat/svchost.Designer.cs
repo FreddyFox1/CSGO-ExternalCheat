@@ -29,60 +29,102 @@ namespace FFxCheat
         /// </summary>
         private void InitializeComponent()
         {
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbWh = new System.Windows.Forms.CheckBox();
+            this.cbRh = new System.Windows.Forms.CheckBox();
+            this.cbBh = new System.Windows.Forms.CheckBox();
             this.butStart = new System.Windows.Forms.Button();
-            this.butRadar = new System.Windows.Forms.Button();
-            this.butJump = new System.Windows.Forms.Button();
+            this.cbFh = new System.Windows.Forms.CheckBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.cbFh);
+            this.groupBox1.Controls.Add(this.cbBh);
+            this.groupBox1.Controls.Add(this.cbRh);
+            this.groupBox1.Controls.Add(this.cbWh);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(105, 106);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Выбор";
+            // 
+            // cbWh
+            // 
+            this.cbWh.AutoSize = true;
+            this.cbWh.Location = new System.Drawing.Point(5, 19);
+            this.cbWh.Name = "cbWh";
+            this.cbWh.Size = new System.Drawing.Size(73, 17);
+            this.cbWh.TabIndex = 0;
+            this.cbWh.Text = "WallHack";
+            this.cbWh.UseVisualStyleBackColor = true;
+            // 
+            // cbRh
+            // 
+            this.cbRh.AutoSize = true;
+            this.cbRh.Location = new System.Drawing.Point(5, 40);
+            this.cbRh.Name = "cbRh";
+            this.cbRh.Size = new System.Drawing.Size(81, 17);
+            this.cbRh.TabIndex = 1;
+            this.cbRh.Text = "RadarHack";
+            this.cbRh.UseVisualStyleBackColor = true;
+            // 
+            // cbBh
+            // 
+            this.cbBh.AutoSize = true;
+            this.cbBh.Location = new System.Drawing.Point(5, 61);
+            this.cbBh.Name = "cbBh";
+            this.cbBh.Size = new System.Drawing.Size(82, 17);
+            this.cbBh.TabIndex = 2;
+            this.cbBh.Text = "BannyHope";
+            this.cbBh.UseVisualStyleBackColor = true;
             // 
             // butStart
             // 
-            this.butStart.Location = new System.Drawing.Point(12, 12);
+            this.butStart.Location = new System.Drawing.Point(24, 124);
             this.butStart.Name = "butStart";
             this.butStart.Size = new System.Drawing.Size(75, 23);
-            this.butStart.TabIndex = 0;
-            this.butStart.Text = "Wallhack";
+            this.butStart.TabIndex = 1;
+            this.butStart.Text = "Start";
             this.butStart.UseVisualStyleBackColor = true;
-            this.butStart.Click += new System.EventHandler(this.butStart_Click);
             // 
-            // butRadar
+            // cbFh
             // 
-            this.butRadar.Location = new System.Drawing.Point(93, 12);
-            this.butRadar.Name = "butRadar";
-            this.butRadar.Size = new System.Drawing.Size(75, 23);
-            this.butRadar.TabIndex = 1;
-            this.butRadar.Text = "Radar";
-            this.butRadar.UseVisualStyleBackColor = true;
-            this.butRadar.Click += new System.EventHandler(this.butRadar_Click);
-            // 
-            // butJump
-            // 
-            this.butJump.Location = new System.Drawing.Point(174, 12);
-            this.butJump.Name = "butJump";
-            this.butJump.Size = new System.Drawing.Size(75, 23);
-            this.butJump.TabIndex = 2;
-            this.butJump.Text = "BunnyHope";
-            this.butJump.UseVisualStyleBackColor = true;
-            this.butJump.Click += new System.EventHandler(this.butJump_Click);
+            this.cbFh.AutoSize = true;
+            this.cbFh.Location = new System.Drawing.Point(5, 82);
+            this.cbFh.Name = "cbFh";
+            this.cbFh.Size = new System.Drawing.Size(77, 17);
+            this.cbFh.TabIndex = 3;
+            this.cbFh.Text = "FlashHack";
+            this.cbFh.UseVisualStyleBackColor = true;
             // 
             // svchost
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(254, 41);
-            this.Controls.Add(this.butJump);
-            this.Controls.Add(this.butRadar);
+            this.ClientSize = new System.Drawing.Size(130, 151);
             this.Controls.Add(this.butStart);
+            this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "svchost";
             this.Text = "svchost";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.CheckBox cbBh;
+        private System.Windows.Forms.CheckBox cbRh;
+        private System.Windows.Forms.CheckBox cbWh;
         private System.Windows.Forms.Button butStart;
-        private System.Windows.Forms.Button butRadar;
-        private System.Windows.Forms.Button butJump;
+        private System.Windows.Forms.CheckBox cbFh;
     }
 }
 

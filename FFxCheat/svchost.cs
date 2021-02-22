@@ -23,17 +23,57 @@ namespace FFxCheat
 
         private void butStart_Click(object sender, EventArgs e)
         {
-            new Thread(() => Wallhack.OnWallHack(bs));
+            Start();
         }
 
-        private void butJump_Click(object sender, EventArgs e)
+        private void Start()
         {
-            new Thread(() => BunnyHope.onBunnyHope(bs));
+
+            if (cbWh.Checked)
+            {
+                new Thread(() =>
+                {
+                    Wallhack.OnWallHack(bs);
+                })
+                {
+                    IsBackground = true,
+                    Priority = ThreadPriority.Normal
+                }.Start();
+            }
+            if (cbRh.Checked)
+            {
+                new Thread(() =>
+                {
+                    Radar.onRadarHack(bs);
+                })
+                {
+                    IsBackground = true,
+                    Priority = ThreadPriority.Normal
+                }.Start();
+            }
+            if (cbBh.Checked)
+            {
+                new Thread(() =>
+                {
+                    BunnyHope.onBunnyHope(bs);
+                })
+                {
+                    IsBackground = true,
+                    Priority = ThreadPriority.Normal
+                }.Start();
+            }
+            if (cbFh.Checked)
+            {
+                new Thread(() =>
+                {
+                    NoFlash.OnNoFlash(bs);
+                })
+                {
+                    IsBackground = true,
+                    Priority = ThreadPriority.Normal
+                }.Start();
+            }
         }
 
-        private void butRadar_Click(object sender, EventArgs e)
-        {
-            new Thread(() => Radar.onRadarHack(bs));
-        }
     }
 }

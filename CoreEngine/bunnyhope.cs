@@ -1,24 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace CoreEngine
 {
-    public class bunnyhope
+
+    /// <summary>
+    /// Отвечает за безошбочные прыжки по карте, позволяет намного быстрее передвигаться по карте
+    /// </summary>
+    public class BunnyHope
     {
-        public static void BunnyHope(BaseVars baseVars)
+        public static void onBunnyHope(BaseVars baseVars)
         {
             #region Calculation
-            int FJump = baseVars.GameClient + DefaultOffsets.aJump;
-            int aPlayer = baseVars.GameClient + DefaultOffsets.aLocalPlayer;
+            int FJump = baseVars.GameClient + signatures.dwForceJump;
+            int aPlayer = baseVars.GameClient + signatures.dwLocalPlayer;
             int LocalPlayer = baseVars.VAM.ReadInt32((IntPtr)aPlayer);
-            int aFlag = LocalPlayer + DefaultOffsets.oFlags;
+            int aFlag = LocalPlayer + Netvars.m_fFlags;
             #endregion
 
-            while (User32.GetAsyncKeyState(32) > 0)
+            while (WinApi.GetAsyncKeyState(32) > 0)
             {
                 int _Flag = baseVars.VAM.ReadInt32((IntPtr)aFlag);
                 if (_Flag == 257)

@@ -89,6 +89,7 @@ namespace FFxCheat
             this.butStart.TabIndex = 1;
             this.butStart.Text = "Start";
             this.butStart.UseVisualStyleBackColor = true;
+            this.butStart.Click += new System.EventHandler(this.butStart_Click_1);
             // 
             // cbFh
             // 

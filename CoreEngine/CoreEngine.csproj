@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="BaseVars.cs" />
     <Compile Include="BunnyHope.cs" />
+    <Compile Include="FastSpray.cs" />
     <Compile Include="NoFlash.cs" />
     <Compile Include="Radar.cs" />
     <Compile Include="Structs.cs" />

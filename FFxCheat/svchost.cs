@@ -75,9 +75,5 @@ namespace FFxCheat
             }
         }
 
-        private void butStart_Click_1(object sender, EventArgs e)
-        {
-            Start();
-        }
     }
 }

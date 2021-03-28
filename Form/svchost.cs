@@ -69,21 +69,3 @@ namespace FFx
         }
     }
 }
-
-
-public class a
-{
-
-
-    private void WallhackOn()
-    {
-        new Thread(() =>
-        {
-            Engine.General.Wallhack.OnWallHack(bs);
-        })
-        {
-            IsBackground = true,
-            Priority = ThreadPriority.Normal
-        }.Start();
-    }
-}

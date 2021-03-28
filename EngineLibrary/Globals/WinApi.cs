@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace CoreEngine
+namespace Engine.Globals
 {
     public class WinApi
     {
@@ -31,7 +31,7 @@ namespace CoreEngine
         //public static extern bool GetWindowRect(IntPtr hwnd, out str.RECT lpRect);
 
         //События мыши
-        [DllImport("user32.dll", CharSet = System.Runtime.InteropServices.CharSet.Auto, CallingConvention = System.Runtime.InteropServices.CallingConvention.StdCall)]
+        [DllImport("user32.dll", CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]
         public static extern void mouse_event(uint dwFlags, int dx, int dy, int dwData, int dwExtraInfo);
         //Нажатие на левую кнопку мыши
         public const int MOUSEEVENTF_LEFTDOWN = 0x0002;

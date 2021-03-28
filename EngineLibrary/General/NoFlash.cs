@@ -1,7 +1,8 @@
-﻿using System;
+﻿using Engine.Globals;
+using System;
 using System.Threading;
 
-namespace CoreEngine
+namespace Engine.General
 {
     /// <summary>
     /// Отключаем эффект от ослепляющей гранаты

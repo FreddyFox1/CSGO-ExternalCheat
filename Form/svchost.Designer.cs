@@ -1,5 +1,5 @@
 ﻿
-namespace FFxCheat
+namespace FFx
 {
     partial class svchost
     {

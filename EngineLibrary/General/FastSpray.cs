@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static CoreEngine.WinApi;
+using static Engine.Globals.WinApi;
 
-namespace CoreEngine
+namespace Engine.General
 {
     public class FastSpray
     {

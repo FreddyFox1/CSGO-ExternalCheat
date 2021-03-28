@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 
-namespace CoreEngine
+namespace Engine.Globals
 {
     public class BaseVars
     {

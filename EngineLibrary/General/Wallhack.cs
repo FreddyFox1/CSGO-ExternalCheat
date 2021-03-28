@@ -1,7 +1,8 @@
-﻿using System;
+﻿using Engine.Globals;
+using System;
 using System.Threading;
 
-namespace CoreEngine
+namespace Engine.General
 {
     /// <summary>
     /// Дает преимущество игроку и позволяет видеть сквозь стены своих противников 

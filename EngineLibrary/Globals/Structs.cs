@@ -1,4 +1,4 @@
-﻿namespace CoreEngine
+﻿namespace Engine.Globals
 {
     public static class Structs
     {

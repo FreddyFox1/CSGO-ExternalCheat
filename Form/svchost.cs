@@ -1,16 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using CoreEngine;
+using Engine.General;
+using Engine.Globals;
 
-namespace FFxCheat
+namespace FFx
 {
     public partial class svchost : Form
     {
@@ -73,5 +67,23 @@ namespace FFxCheat
                 }.Start();
             }
         }
+    }
+}
+
+
+public class a
+{
+
+
+    private void WallhackOn()
+    {
+        new Thread(() =>
+        {
+            Engine.General.Wallhack.OnWallHack(bs);
+        })
+        {
+            IsBackground = true,
+            Priority = ThreadPriority.Normal
+        }.Start();
     }
 }

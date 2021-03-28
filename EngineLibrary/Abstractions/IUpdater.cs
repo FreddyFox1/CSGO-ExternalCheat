@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CoreEngine
+namespace Engine
 {
     /// <summary>
     /// Automatical updater for offsets

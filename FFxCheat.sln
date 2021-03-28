@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FFxCheat", "FFxCheat\FFxCheat.csproj", "{CE097A01-23AB-47C3-A1D9-C8DF12A144D4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FFx", "FFxCheat\FFx.csproj", "{CE097A01-23AB-47C3-A1D9-C8DF12A144D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreEngine", "CoreEngine\CoreEngine.csproj", "{5D3D760E-BDEA-4045-BB76-E851D42549EA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Engine", "CoreEngine\Engine.csproj", "{5D3D760E-BDEA-4045-BB76-E851D42549EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

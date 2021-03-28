@@ -28,7 +28,6 @@ namespace FFxCheat
 
         private void Start()
         {
-            
             if (cbWh.Checked)
             {
                 new Thread(() =>
@@ -74,6 +73,5 @@ namespace FFxCheat
                 }.Start();
             }
         }
-
     }
 }

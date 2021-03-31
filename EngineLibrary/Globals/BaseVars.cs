@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 namespace Engine.Globals
 {
-    public class BaseVars
+    public static class BaseVars
     {
         //Process name
         private static string gameProcess;

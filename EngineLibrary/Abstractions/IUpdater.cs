@@ -17,11 +17,6 @@ namespace Engine
         void DownloadOffsets();
 
         /// <summary>
-        /// Parsing WebData
-        /// </summary>
-        void ParseLine();
-
-        /// <summary>
         /// Update offsets on refs
         /// </summary>
         /// <param name="offsetName">offset name in Dictionary</param>

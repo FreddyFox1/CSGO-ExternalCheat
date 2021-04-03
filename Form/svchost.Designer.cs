@@ -111,6 +111,7 @@ namespace FFx
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "svchost";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "svchost";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

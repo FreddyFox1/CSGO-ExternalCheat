@@ -22,15 +22,6 @@ namespace Engine.General
                     rwo = true,
                     rwuo = true
                 };
-                Structs.GlowEffects Team = new Structs.GlowEffects()
-                {
-                    _colorRed = 0,
-                    _colorGreen = 0,
-                    _colorBlue = 0,
-                    _colorAlpha = 0,
-                    rwo = true,
-                    rwuo = true
-                };
                 int address;
                 int i = 1;
 
@@ -51,35 +42,7 @@ namespace Engine.General
                         address = EntityList + Netvars.m_iGlowIndex;
                         int GlowIndex = baseVars.VAM.ReadInt32((IntPtr)address);
 
-                        if (MyTeam == HisTeam)
-                        {
-                            address = baseVars.GameClient + signatures.dwGlowObjectManager;
-                            int GlowObject = baseVars.VAM.ReadInt32((IntPtr)address);
-                            int calculation = GlowIndex * 0x38 + 0x4;
-                            int current = GlowObject + calculation;
-                            baseVars.VAM.WriteFloat((IntPtr)current, Team._colorRed);
-
-                            calculation = GlowIndex * 0x38 + 0x8;
-                            current = GlowObject + calculation;
-                            baseVars.VAM.WriteFloat((IntPtr)current, Team._colorGreen);
-
-                            calculation = GlowIndex * 0x38 + 0xC;
-                            current = GlowObject + calculation;
-                            baseVars.VAM.WriteFloat((IntPtr)current, Team._colorBlue);
-
-                            calculation = GlowIndex * 0x38 + 0x10;
-                            current = GlowObject + calculation;
-                            baseVars.VAM.WriteFloat((IntPtr)current, Team._colorAlpha);
-
-                            calculation = GlowIndex * 0x38 + 0x24;
-                            current = GlowObject + calculation;
-                            baseVars.VAM.WriteBoolean((IntPtr)current, Team.rwo);
-
-                            calculation = GlowIndex * 0x38 + 0x25;
-                            current = GlowObject + calculation;
-                            baseVars.VAM.WriteBoolean((IntPtr)current, Team.rwuo);
-                        }
-                        else
+                        if (MyTeam != HisTeam)
                         {
                             address = baseVars.GameClient + signatures.dwGlowObjectManager;
                             int GlowObject = baseVars.VAM.ReadInt32((IntPtr)address);
@@ -107,13 +70,12 @@ namespace Engine.General
                             current = GlowObject + calculation;
                             baseVars.VAM.WriteBoolean((IntPtr)current, Enemy.rwuo);
                         }
-                    }
 
-                    i++;
-                } while (i < 65);
+                        i++;
+                    } while (i < 65) ;
 
-                Thread.Sleep(10);
-            }
+                    Thread.Sleep(10);
+                }
+        }
         }
     }
-}

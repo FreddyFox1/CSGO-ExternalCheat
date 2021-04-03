@@ -37,19 +37,19 @@ namespace Engine.Globals
             {
                 Structs.GlowEffects Enemy = new Structs.GlowEffects()
                 {
-                    _colorRed = 1,
-                    _colorGreen = 1,
-                    _colorBlue = 0,
-                    _colorAlpha = 1,
+                    colorRed = 1,
+                    colorGreen = 1,
+                    colorBlue = 0,
+                    colorAlpha = 1,
                     rwo = true,
                     rwuo = true
                 };
                 Structs.GlowEffects Team = new Structs.GlowEffects()
                 {
-                    _colorRed = 0,
-                    _colorGreen = 0,
-                    _colorBlue = 0,
-                    _colorAlpha = 0,
+                    colorRed = 0,
+                    colorGreen = 0,
+                    colorBlue = 0,
+                    colorAlpha = 0,
                     rwo = true,
                     rwuo = true
                 };
@@ -79,20 +79,20 @@ namespace Engine.Globals
                             int GlowObject = mem.ReadMemory<Int32>(address);
                             int calculation = GlowIndex * 0x38 + 0x4;
                             int current = GlowObject + calculation;
-                            baseVars.VAM.WriteFloat((IntPtr)current, Team._colorRed);
-                            mem.WriteMemory<float>(current, Team._colorRed);
+                            baseVars.VAM.WriteFloat((IntPtr)current, Team.colorRed);
+                            mem.WriteMemory<float>(current, Team.colorRed);
 
                             calculation = GlowIndex * 0x38 + 0x8;
                             current = GlowObject + calculation;
-                            mem.WriteMemory<float>(current, Team._colorGreen);
+                            mem.WriteMemory<float>(current, Team.colorGreen);
 
                             calculation = GlowIndex * 0x38 + 0xC;
                             current = GlowObject + calculation;
-                            mem.WriteMemory<float>(current, Team._colorBlue);
+                            mem.WriteMemory<float>(current, Team.colorBlue);
 
                             calculation = GlowIndex * 0x38 + 0x10;
                             current = GlowObject + calculation;
-                            mem.WriteMemory<float>(current, Team._colorAlpha);
+                            mem.WriteMemory<float>(current, Team.colorAlpha);
 
                             calculation = GlowIndex * 0x38 + 0x24;
                             current = GlowObject + calculation;
@@ -108,19 +108,19 @@ namespace Engine.Globals
                             int GlowObject = baseVars.VAM.ReadInt32((IntPtr)address);
                             int calculation = GlowIndex * 0x38 + 0x4;
                             int current = GlowObject + calculation;
-                            mem.WriteMemory<float>(current, Enemy._colorRed);
+                            mem.WriteMemory<float>(current, Enemy.colorRed);
 
                             calculation = GlowIndex * 0x38 + 0x8;
                             current = GlowObject + calculation;
-                            mem.WriteMemory<float>(current, Enemy._colorGreen);
+                            mem.WriteMemory<float>(current, Enemy.colorGreen);
 
                             calculation = GlowIndex * 0x38 + 0xC;
                             current = GlowObject + calculation;
-                            mem.WriteMemory<float>(current, Enemy._colorBlue);
+                            mem.WriteMemory<float>(current, Enemy.colorBlue);
 
                             calculation = GlowIndex * 0x38 + 0x10;
                             current = GlowObject + calculation;
-                            mem.WriteMemory<float>(current, Enemy._colorAlpha);
+                            mem.WriteMemory<float>(current, Enemy.colorAlpha);
 
                             calculation = GlowIndex * 0x38 + 0x24;
                             current = GlowObject + calculation;

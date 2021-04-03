@@ -3,16 +3,16 @@
     public static class Structs
     {
         /// <summary>
-        /// Структура позволяет окрашивать модели игроков свечением вокруг них
+        /// Glow effect in CSGO
         /// </summary>
-        public struct GlowEffects
+        public class GlowEffects
         {
-            public float _colorRed;
-            public float _colorGreen;
-            public float _colorBlue;
-            public float _colorAlpha;
-            public bool rwo;
-            public bool rwuo;
+            public float colorRed { get; set; } = 1;
+            public float colorGreen { get; set; } = 1;
+            public float colorBlue { get; set; } = 0;
+            public float colorAlpha { get; set; } = 1;
+            public bool rwo { get; set; } = true;
+            public bool rwuo { get; set; } = true;
         }
     }
 }

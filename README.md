@@ -14,12 +14,13 @@ This project include:
 using Engine.General;
 using Engine.Globals;
 
-public class Form : Form 
+public class Cheat 
 {
+    //Create base variable for using cheat
     private BaseVars bs;
-    public Form()
+    public Cheat()
     {
-        InitializeComponent();
+        //Initialize variable with process name 'csgo'
         bs = new BaseVars("csgo");
         WallhackOn();
     }
@@ -28,6 +29,7 @@ public class Form : Form
     {
         new Thread(() =>
         {
+            //Send base variable to Engine
             Engine.General.Wallhack.OnWallHack(bs);
         })
         {

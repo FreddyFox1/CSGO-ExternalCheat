@@ -11,6 +11,7 @@ namespace Engine.Globals
         private static int gameClient;
         // Memory R/W methods lib  
         private static VAMemory vam;
+        
         public string GameProcess
         {
             get
@@ -49,7 +50,7 @@ namespace Engine.Globals
                 {
                     foreach (ProcessModule m in p[0].Modules)
                     {
-                        //later need change to panorama.dll
+                        //Later need change to panorama_client.dll
                         if (m.ModuleName == "client.dll")
                         {
                             gameClient = (int)m.BaseAddress;
@@ -60,7 +61,7 @@ namespace Engine.Globals
                 }
                 else
                 {
-                    Console.WriteLine("not found.");
+                    Console.WriteLine("Not found.");
                     return 0;
                 }
             }

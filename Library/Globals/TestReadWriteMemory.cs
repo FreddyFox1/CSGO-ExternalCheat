@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace Engine.Globals
 {
@@ -11,26 +7,134 @@ namespace Engine.Globals
     {
         public static void onBunnyHope(BaseVars baseVars)
         {
-            Memory mem = new Memory(baseVars.GameProcess);
+            Memory RAM = new Memory(baseVars.GameProcess);
+            OffsetDictionary dic = new OffsetDictionary();
 
             int FJump = baseVars.GameClient + signatures.dwForceJump;
             int aPlayer = baseVars.GameClient + signatures.dwLocalPlayer;
-            int LocalPlayer = mem.ReadMemory<Int32>(aPlayer);
+            int LocalPlayer = RAM.ReadMemory<Int32>(aPlayer);
             int aFlag = LocalPlayer + Netvars.m_fFlags;
-
 
             while (true)
             {
                 while (WinApi.GetAsyncKeyState(32) > 0)
                 {
-                    int _Flag = mem.ReadMemory<Int32>(aFlag);
+                    int _Flag = RAM.ReadMemory<Int32>(aFlag);
                     if (_Flag == 257)
                     {
-                        mem.WriteMemory<Int32>(FJump, 5);
+                        RAM.WriteMemory<Int32>(FJump, 5);
                         Thread.Sleep(10);
-                        mem.WriteMemory<Int32>(FJump, 4);
+                        RAM.WriteMemory<Int32>(FJump, 4);
                     }
                 }
+                Thread.Sleep(10);
+            }
+        }
+        public static void OnWallHack(BaseVars baseVars)
+        {
+            Memory mem = new Memory(baseVars.GameProcess);
+            while (true)
+            {
+                Structs.GlowEffects Enemy = new Structs.GlowEffects()
+                {
+                    _colorRed = 1,
+                    _colorGreen = 1,
+                    _colorBlue = 0,
+                    _colorAlpha = 1,
+                    rwo = true,
+                    rwuo = true
+                };
+                Structs.GlowEffects Team = new Structs.GlowEffects()
+                {
+                    _colorRed = 0,
+                    _colorGreen = 0,
+                    _colorBlue = 0,
+                    _colorAlpha = 0,
+                    rwo = true,
+                    rwuo = true
+                };
+                int address;
+                int i = 1;
+
+                do
+                {
+                    address = baseVars.GameClient + signatures.dwLocalPlayer;
+                    int Player = mem.ReadMemory<Int32>(address);
+                    address = Player + Netvars.m_iTeamNum;
+                    int MyTeam = mem.ReadMemory<Int32>(address);
+                    address = baseVars.GameClient + signatures.dwEntityList + (i - 1) * 0x10;
+                    int EntityList = mem.ReadMemory<Int32>(address);
+                    address = EntityList + Netvars.m_iTeamNum;
+                    int HisTeam = mem.ReadMemory<Int32>(address);
+                    address = EntityList + signatures.m_bDormant;
+
+                    if (!baseVars.VAM.ReadBoolean((IntPtr)address))
+                    {
+                        address = EntityList + Netvars.m_iGlowIndex;
+                        int GlowIndex = mem.ReadMemory<Int32>(address);
+
+                        if (MyTeam == HisTeam)
+                        {
+                            address = baseVars.GameClient + signatures.dwGlowObjectManager;
+                            int GlowObject = mem.ReadMemory<Int32>(address);
+                            int calculation = GlowIndex * 0x38 + 0x4;
+                            int current = GlowObject + calculation;
+                            baseVars.VAM.WriteFloat((IntPtr)current, Team._colorRed);
+                            mem.WriteMemory<float>(current, Team._colorRed);
+
+                            calculation = GlowIndex * 0x38 + 0x8;
+                            current = GlowObject + calculation;
+                            mem.WriteMemory<float>(current, Team._colorGreen);
+
+                            calculation = GlowIndex * 0x38 + 0xC;
+                            current = GlowObject + calculation;
+                            mem.WriteMemory<float>(current, Team._colorBlue);
+
+                            calculation = GlowIndex * 0x38 + 0x10;
+                            current = GlowObject + calculation;
+                            mem.WriteMemory<float>(current, Team._colorAlpha);
+
+                            calculation = GlowIndex * 0x38 + 0x24;
+                            current = GlowObject + calculation;
+                            mem.WriteMemory<bool>(current, Team.rwo);
+
+                            calculation = GlowIndex * 0x38 + 0x25;
+                            current = GlowObject + calculation;
+                            mem.WriteMemory<bool>(current, Team.rwuo);
+                        }
+                        else
+                        {
+                            address = baseVars.GameClient + signatures.dwGlowObjectManager;
+                            int GlowObject = baseVars.VAM.ReadInt32((IntPtr)address);
+                            int calculation = GlowIndex * 0x38 + 0x4;
+                            int current = GlowObject + calculation;
+                            mem.WriteMemory<float>(current, Enemy._colorRed);
+
+                            calculation = GlowIndex * 0x38 + 0x8;
+                            current = GlowObject + calculation;
+                            mem.WriteMemory<float>(current, Enemy._colorGreen);
+
+                            calculation = GlowIndex * 0x38 + 0xC;
+                            current = GlowObject + calculation;
+                            mem.WriteMemory<float>(current, Enemy._colorBlue);
+
+                            calculation = GlowIndex * 0x38 + 0x10;
+                            current = GlowObject + calculation;
+                            mem.WriteMemory<float>(current, Enemy._colorAlpha);
+
+                            calculation = GlowIndex * 0x38 + 0x24;
+                            current = GlowObject + calculation;
+                            mem.WriteMemory<bool>(current, Enemy.rwo);
+
+                            calculation = GlowIndex * 0x38 + 0x25;
+                            current = GlowObject + calculation;
+                            mem.WriteMemory<bool>(current, Enemy.rwuo);
+                        }
+                    }
+
+                    i++;
+                } while (i < 65);
+
                 Thread.Sleep(10);
             }
         }

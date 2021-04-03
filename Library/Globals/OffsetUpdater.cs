@@ -1,11 +1,6 @@
-﻿using Engine;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System;
 using System.Net;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Engine.Globals
@@ -28,7 +23,7 @@ namespace Engine.Globals
             WebData = web.DownloadString("https://raw.githubusercontent.com/frk1/hazedumper/master/csgo.cs");
         }
 
-        public void UpdateOffset(string offsetName, ref int varName)
+        public void UpdateOffset(string offsetName, int varName)
         {
             Regex rgx = new Regex($"public const Int32 {offsetName} = 0x.*;"); // csgo.cs format from HazeDumper
             Match match = rgx.Match(WebData);
@@ -43,8 +38,6 @@ namespace Engine.Globals
                     $"{Environment.NewLine}This will likely prevent the cheat from functioning properly.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
     }
 }
 

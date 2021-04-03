@@ -53,6 +53,7 @@
     <Compile Include="General\NoFlash.cs" />
     <Compile Include="Abstractions\IMemory.cs" />
     <Compile Include="Globals\Memory.cs" />
+    <Compile Include="Globals\OffsetDictionary.cs" />
     <Compile Include="Globals\OffsetUpdater.cs" />
     <Compile Include="General\Radar.cs" />
     <Compile Include="Globals\Structs.cs" />

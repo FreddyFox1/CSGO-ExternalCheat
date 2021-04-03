@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Engine
+﻿namespace Engine
 {
     /// <summary>
     /// Automatical updater for offsets
@@ -17,10 +11,10 @@ namespace Engine
         void DownloadOffsets();
 
         /// <summary>
-        /// Update offsets on refs
+        /// Update offsets
         /// </summary>
         /// <param name="offsetName">offset name in Dictionary</param>
         /// <param name="varName">offset ref in Dictionary</param>
-        void UpdateOffset(string offsetName, ref int varName);
+        void UpdateOffset(string offsetName, int varName);
     }
 }

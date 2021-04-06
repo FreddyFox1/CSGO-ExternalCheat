@@ -1,5 +1,8 @@
 # CSGO External Cheat
 
+```This code is written for educational and entertainment purposes and does not encourage use. The author is not responsible for its use and possible blocking in the game```
+
+
 <p>External cheat for game Counter-Strike Global Offensive this is a file with extension *.exe, which using HANDLE process of CS GO to is READING and WRITING in RAM some values</p>
 
 This project include:
@@ -42,3 +45,10 @@ public class Cheat
 <h3>Cheat in game</h3>
 <img src="https://user-images.githubusercontent.com/35505083/108830013-eb3e1700-75d9-11eb-9119-f4d759f0d35d.jpg" alt="Меню чита" height="300"/>
 
+
+### Fair use disclaimer
+
+This project is for educational purposes. Do not use this in any way which could disturb or affect:
+
+Integrity of the game
+Any player's experience playing the game

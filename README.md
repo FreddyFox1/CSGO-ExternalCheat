@@ -1,6 +1,6 @@
 # CSGO External Cheat
 
-`The code is written for educational and entertainment purposes and does not encourage use. The author is not responsible for its use and possible blocking in the game.`
+```This code is written for educational and entertainment purposes and does not encourage use. The author is not responsible for its use and possible blocking in the game```
 
 
 <p>External cheat for game Counter-Strike Global Offensive this is a file with extension *.exe, which using HANDLE process of CS GO to is READING and WRITING in RAM some values</p>

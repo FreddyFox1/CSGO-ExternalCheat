@@ -1,5 +1,6 @@
 ﻿using Engine.Globals;
 using System;
+using System.Drawing;
 using System.Threading;
 
 namespace Engine.General
@@ -115,17 +116,18 @@ namespace Engine.General
         /// <param name="_Green">Color Green</param>
         /// <param name="_Blue">Color blue</param>
         /// <param name="_Alpha">Color Alpha</param>
-        public static void On(BaseVars baseVars, float _Red, float _Green, float _Blue, float _Alpha)
+        public static void On(BaseVars baseVars, Color color)
         {
             Structs.GlowEffects Enemy = new Structs.GlowEffects()
             {
-                colorRed = _Red,
-                colorGreen = _Green,
-                colorBlue = _Blue,
-                colorAlpha = _Alpha,
-                rwo = false,
-                rwuo = false
+                colorRed = color.R,
+                colorGreen = color.G,
+                colorBlue = color.B,
+                colorAlpha = color.A,
+                rwo = true,
+                rwuo = true
             };
+
             Structs.GlowEffects Team = new Structs.GlowEffects()
             {
                 colorAlpha = 0,

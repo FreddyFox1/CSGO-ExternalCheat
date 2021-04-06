@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
 using Engine.General;
@@ -9,6 +10,8 @@ namespace FFx
     public partial class svchost : Form
     {
         private BaseVars bs;
+        private Color Color;
+
         public svchost()
         {
             InitializeComponent();
@@ -26,7 +29,10 @@ namespace FFx
             {
                 new Thread(() =>
                 {
-                    Wallhack.On(bs);
+                    if (Color != Color.Empty)
+                        Wallhack.On(bs, Color);
+                    else
+                        Wallhack.On(bs);
                 })
                 {
                     IsBackground = true,
@@ -66,6 +72,15 @@ namespace FFx
                     Priority = ThreadPriority.Normal
                 }.Start();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (colorDialog.ShowDialog() == DialogResult.Cancel)
+                return;
+            Color = colorDialog.Color;
+            button1.BackColor = Color;
+
         }
     }
 }

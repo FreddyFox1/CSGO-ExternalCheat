@@ -7,8 +7,8 @@
         /// </summary>
         public class GlowEffects
         {
-            public float colorRed { get; set; } = 1;
-            public float colorGreen { get; set; } = 1;
+            public float colorRed { get; set; } = 255;
+            public float colorGreen { get; set; } = 0;
             public float colorBlue { get; set; } = 0;
             public float colorAlpha { get; set; } = 1;
             public bool rwo { get; set; } = true;

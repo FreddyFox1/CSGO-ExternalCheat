@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,6 +47,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstractions\IThreadManager.cs" />
     <Compile Include="Abstractions\ITimeStamp.cs" />
     <Compile Include="Globals\BaseVars.cs" />
     <Compile Include="General\BunnyHope.cs" />
@@ -59,6 +61,7 @@
     <Compile Include="Globals\Structs.cs" />
     <Compile Include="General\Wallhack.cs" />
     <Compile Include="Globals\Netvars.cs" />
+    <Compile Include="Globals\ThreadManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Globals\WinApi.cs" />
   </ItemGroup>

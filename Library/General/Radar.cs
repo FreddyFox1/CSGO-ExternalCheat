@@ -11,7 +11,7 @@ namespace Engine.General
         /// Цикл ищет всех игроков с 1 по 12, если на сервере больше 12 игроков необходимо модифицировать класс...
         /// </summary>
         /// <param name="baseVars">Передает экземпляр ключевого класса, для работы с клиентов игры</param>
-        public static void onRadarHack(BaseVars baseVars)
+        public static void On(BaseVars baseVars)
         {
             int address, current;
             while (true)
@@ -19,12 +19,12 @@ namespace Engine.General
                 for (int i = 1; i < 12; i++)
                 {
                     address = baseVars.GameClient + signatures.dwEntityList + (i - 1) * 0x10;
-                    int EntityList = baseVars.VAM.ReadInt32((IntPtr)address);
-                    bool dwCurrentEntity = baseVars.VAM.ReadBoolean((IntPtr)EntityList);
+                    int EntityList = baseVars.VAM.ReadMemory<Int32>(address);
+                    bool dwCurrentEntity = baseVars.VAM.ReadMemory<bool>(EntityList);
                     if (dwCurrentEntity)
                     {
                         current = EntityList + Netvars.m_bSpotted;
-                        baseVars.VAM.WriteBoolean((IntPtr)current, true);
+                        baseVars.VAM.WriteMemory<bool>(current, true);
                     }
                 }
                 Thread.Sleep(250);

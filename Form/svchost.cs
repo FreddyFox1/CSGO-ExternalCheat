@@ -26,7 +26,7 @@ namespace FFx
             {
                 new Thread(() =>
                 {
-                    Wallhack.OnWallHack(bs);
+                    Wallhack.On(bs);
                 })
                 {
                     IsBackground = true,
@@ -37,7 +37,7 @@ namespace FFx
             {
                 new Thread(() =>
                 {
-                    Radar.onRadarHack(bs);
+                    Radar.On(bs);
                 })
                 {
                     IsBackground = true,
@@ -48,7 +48,7 @@ namespace FFx
             {
                 new Thread(() =>
                 {
-                    BunnyHope.onBunnyHope(bs);
+                    BunnyHope.On(bs);
                 })
                 {
                     IsBackground = true,
@@ -59,7 +59,7 @@ namespace FFx
             {
                 new Thread(() =>
                 {
-                    NoFlash.OnNoFlash(bs);
+                    NoFlash.On(bs);
                 })
                 {
                     IsBackground = true,

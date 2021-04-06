@@ -46,3 +46,9 @@ public class Cheat
 <img src="https://user-images.githubusercontent.com/35505083/108830013-eb3e1700-75d9-11eb-9119-f4d759f0d35d.jpg" alt="Меню чита" height="300"/>
 
 
+### Fair use disclaimer
+
+This project is for educational purposes. Do not use this in any way which could disturb or affect:
+
+Integrity of the game
+Any player's experience playing the game

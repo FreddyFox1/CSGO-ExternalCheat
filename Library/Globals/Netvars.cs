@@ -10,7 +10,7 @@ namespace Engine.Globals
     /// rus: Базовые адреса для смещений в памяти.
     /// eng: Base adresses for offssets memory
     /// </summary>
-    public class Netvars
+    public static class Netvars
     {
         public static Int32 cs_gamerules_data = 0x0;
         public static Int32 m_ArmorValue = 0xB378;
@@ -47,7 +47,7 @@ namespace Engine.Globals
         public static Int32 m_clrRender = 0x70;
         public static Int32 m_dwBoneMatrix = 0x26A8;
         public static Int32 m_fAccuracyPenalty = 0x3330;
-        public static Int32 m_fFlags;
+        public static Int32 m_fFlags = 0x104;
         public static Int32 m_flC4Blow = 0x2990;
         public static Int32 m_flCustomAutoExposureMax = 0x9E0;
         public static Int32 m_flCustomAutoExposureMin = 0x9DC;
@@ -56,7 +56,7 @@ namespace Engine.Globals
         public static Int32 m_flDefuseLength = 0x29A8;
         public static Int32 m_flFallbackWear = 0x31D0;
         public static Int32 m_flFlashDuration = 0xA420;
-        public static Int32 m_flFlashMaxAlpha = 0xA41C;
+        public static Int32 m_flFlashMaxAlpha;
         public static Int32 m_flLastBoneSetupTime = 0x2924;
         public static Int32 m_flLowerBodyYawTarget = 0x3A90;
         public static Int32 m_flNextAttack = 0x2D70;
@@ -86,7 +86,7 @@ namespace Engine.Globals
         public static Int32 m_iObserverMode = 0x3378;
         public static Int32 m_iShotsFired = 0xA390;
         public static Int32 m_iState = 0x3258;
-        public static Int32 m_iTeamNum = 0xF4;
+        public static Int32 m_iTeamNum;
         public static Int32 m_lifeState = 0x25F;
         public static Int32 m_nBombSite = 0x2984;
         public static Int32 m_nFallbackPaintKit = 0x31C8;
@@ -156,7 +156,7 @@ namespace Engine.Globals
         public static Int32 force_update_spectator_glow = 0x3AD962;
         public static Int32 interface_engine_cvar = 0x3E9EC;
         public static Int32 is_c4_owner = 0x3BA430;
-        public static Int32 m_bDormant = 0xED;
+        public static Int32 m_bDormant;
         public static Int32 m_flSpawnTime = 0xA370;
         public static Int32 m_pStudioHdr = 0x294C;
         public static Int32 m_pitchClassPtr = 0x51D8F70;

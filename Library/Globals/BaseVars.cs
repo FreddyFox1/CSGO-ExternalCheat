@@ -10,8 +10,10 @@ namespace Engine.Globals
         //Adress game client
         private static int gameClient;
         // Memory R/W methods lib  
-        private static VAMemory vam;
-        
+        private static Memory vam;
+
+        private static OffsetDictionary OffsetDictionary;
+
         public string GameProcess
         {
             get
@@ -19,6 +21,7 @@ namespace Engine.Globals
                 return gameProcess;
             }
         }
+
         public int GameClient
         {
             get
@@ -26,7 +29,8 @@ namespace Engine.Globals
                 return gameClient;
             }
         }
-        public VAMemory VAM
+
+        public Memory VAM
         {
             get
             {
@@ -38,7 +42,8 @@ namespace Engine.Globals
         {
             gameProcess = _gameProcess;
             gameClient = GetModuleAddress();
-            vam = new VAMemory(gameProcess);
+            OffsetDictionary = new OffsetDictionary();
+            vam = new Memory(_gameProcess);
         }
 
         private static int GetModuleAddress()
@@ -71,7 +76,5 @@ namespace Engine.Globals
                 return 0;
             }
         }
-
-
     }
 }

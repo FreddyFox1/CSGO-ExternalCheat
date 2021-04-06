@@ -23,7 +23,7 @@ namespace Engine.Globals
             WebData = web.DownloadString("https://raw.githubusercontent.com/frk1/hazedumper/master/csgo.cs");
         }
 
-        public void UpdateOffset(string offsetName, int varName)
+        public void UpdateOffset(string offsetName, ref Int32 varName)
         {
             Regex rgx = new Regex($"public const Int32 {offsetName} = 0x.*;"); // csgo.cs format from HazeDumper
             Match match = rgx.Match(WebData);

@@ -1,4 +1,6 @@
-﻿namespace Engine
+﻿using System;
+
+namespace Engine
 {
     /// <summary>
     /// Automatical updater for offsets
@@ -15,6 +17,6 @@
         /// </summary>
         /// <param name="offsetName">offset name in Dictionary</param>
         /// <param name="varName">offset ref in Dictionary</param>
-        void UpdateOffset(string offsetName, int varName);
+        void UpdateOffset(string offsetName, ref Int32 varName);
     }
 }

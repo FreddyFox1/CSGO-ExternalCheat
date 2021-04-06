@@ -10,7 +10,6 @@ namespace Engine.Globals
         private static IntPtr m_pProcessHandle;
         private static int m_iNumberOfBytesRead = 0;
         private static int m_iNumberOfBytesWritten = 0;
-
         public Memory(string ProcessName)
         {
             if (Process.GetProcessesByName(ProcessName).Length > 0)
@@ -65,8 +64,6 @@ namespace Engine.Globals
                 handle.Free();
             }
         }
-
-
     }
 }
 
